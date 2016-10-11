@@ -1,0 +1,12 @@
+.link {
+  color: white;
+  &__title {
+    color: red;
+  }
+  &__description {
+    color: black;
+  }
+  &__image {
+    border: none;
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "ninomarrazzo.com",
+  "version": "1.0.0",
+  "description": "Nino Marrazzo's Blog developing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack src/js/main.js src/js/app.js --watch & gulp & ./launch-server.sh"
+  },
+  "author": "Nino Marrazzo",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-plugin-transform-runtime": "*",
+    "babel-preset-es2015": "*",
+    "browser-sync": "^2.17.0",
+    "bulma": "^0.2.1",
+    "css-loader": "^0.25.0",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-debug": "^2.1.2",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-inject": "^4.1.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2",
+    "gulp-util": "^3.0.7",
+    "jade": "^1.11.0",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.1",
+    "vue": "latest",
+    "vue-html-loader": "latest",
+    "vue-loader": "9.5.1",
+    "vue-router": "^2.0.0",
+    "vue-style-loader": "latest",
+    "webpack": "*"
+  }
+}
