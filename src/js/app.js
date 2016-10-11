@@ -9397,7 +9397,7 @@
 	  }, [_h('div', {
 	    staticClass: "hero-body"
 	  }, [_h('div', {
-	    staticClass: "container"
+	    staticClass: "container center"
 	  }, [_h('h1', {
 	    staticClass: "title"
 	  }, ["Nino Marrazzo blog"]), _h('h2', {
@@ -9464,22 +9464,6 @@
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
 	var compHeader = __webpack_require__(3);
 
@@ -9500,20 +9484,8 @@
 	module.exports={render:function (){with(this) {
 	  return _h('div', {
 	    staticClass: "container"
-	  }, [_h('nmHeader'), " ", _m(0)])
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', {
-	    staticClass: "columns"
-	  }, [_h('div', {
-	    staticClass: "column"
-	  }, ["\n\t    First column\n\t  "]), " ", _h('div', {
-	    staticClass: "column"
-	  }, ["\n\t    Second column\n\t  "]), " ", _h('div', {
-	    staticClass: "column"
-	  }, ["\n\t    Third column\n\t  "]), " ", _h('div', {
-	    staticClass: "column"
-	  }, ["\n\t    Fourth column\n\t  "])])
-	}}]}
+	  }, [_h('nmHeader')])
+	}},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
