@@ -1,12 +1,11 @@
-<template>
-	<div class="container">
-		<nmHeader></nmHeader>
-	</div>
-
+<template lang="jade">
+	.container
+		nmHeader
+		router-view.center-block <!-- nmMainManu.vue -->
 </template>
 
 <script>
-	var compHeader = require('vue!./components/parts/nmHeader.vue');
+	var compHeader   = require('vue!./components/parts/nmHeader.vue');
 
 	module.exports = {
 		components: {

@@ -48,20 +48,43 @@
 	var VueRouter = __webpack_require__(2);
 
 	var components = {
-		nmHedaer: __webpack_require__(3),
+		nm: __webpack_require__(3),
+		nmHedaer: __webpack_require__(5),
+		nmContents: __webpack_require__(9),
+		nmMainMenu: __webpack_require__(12),
+		nmArticles: __webpack_require__(15),
 	};
 
 	Vue.use(VueRouter);
 
 	var router = new VueRouter({
-		history: false,
+		mode: 'history',
 		routes: [
 			{
 				path: '/',
-				name: 'nm',
 				components: {
-	 				default: __webpack_require__(6),
-				}
+	 				default: components.nm,
+	 				nmContents: components.nmContents,
+				},
+				children: [
+					{
+						path: '',
+						component: components.nmMainMenu,
+					}
+				],
+			},
+			{
+				path: '/blog',
+				name: 'nmblog',
+				components: {
+					default: components.nm,
+				},
+				children: [
+					{
+						path: '',
+						component: components.nmArticles,
+					},
+				],
 			},
 		],
 	});
@@ -70,6 +93,14 @@
 	  el: '#nm',
 	  data: {
 	  }, 
+
+	  components: {
+	  	nm: components.nm,
+		nmHeader: components.nmHeader,
+		nmContents: components.nmContents,
+		nmMainMenu: components.nmMainMenu,
+		nmArticles: components.nmArticles,
+	  },
 
 	  computed: {
 	  	name: function() {
@@ -9340,7 +9371,7 @@
 	__vue_exports__ = __webpack_require__(4)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(5)
+	var __vue_template__ = __webpack_require__(8)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -9367,13 +9398,78 @@
 	    hotAPI.reload("data-v-1", __vue_options__)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] nmHeader.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+	if (__vue_options__.functional) {console.error("[vue-loader] NinoMarrazzo.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 	module.exports = __vue_exports__
 
 
 /***/ },
 /* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	//
+	//
+	//
+	//
+	//
+	//
+
+	var compHeader = __webpack_require__(5);
+
+	module.exports = {
+		components: {
+			nmHeader: compHeader
+		},
+
+		data: function () {
+			return {};
+		}
+	};
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(6)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(7)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-3", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-3", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] nmHeader.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 6 */
 /***/ function(module, exports) {
 
 	//
@@ -9384,26 +9480,47 @@
 	//
 	//
 	//
+	//
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
 	  return _m(0)
 	}},staticRenderFns: [function (){with(this) {
-	  return _h('section', {
-	    staticClass: "hero"
+	  return _h('div', {
+	    staticClass: "header"
+	  }, [_h('section', {
+	    staticClass: "hero header__section"
 	  }, [_h('div', {
-	    staticClass: "hero-body"
+	    staticClass: "hero-body header__section__body"
 	  }, [_h('div', {
-	    staticClass: "container center"
+	    staticClass: "container center header__section__body__container"
 	  }, [_h('h1', {
-	    staticClass: "title"
+	    staticClass: "title header__section__body__container__title"
 	  }, ["Nino Marrazzo blog"]), _h('h2', {
-	    staticClass: "subtitle"
-	  }, ["Sviluppo web, app mobile... Collaudo amache!"])])])])
+	    staticClass: "subtitle header__section__body__container__subtitle"
+	  }, ["Sviluppo web, app mobile... Collaudo amache!"])])])])])
 	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3", module.exports)
+	  }
+	}
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "container"
+	  }, [_h('nmHeader'), _h('router-view', {
+	    staticClass: "center-block"
+	  })])
+	}},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
@@ -9412,16 +9529,16 @@
 	}
 
 /***/ },
-/* 6 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(7)
+	__vue_exports__ = __webpack_require__(10)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(8)
+	var __vue_template__ = __webpack_require__(11)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -9448,14 +9565,14 @@
 	    hotAPI.reload("data-v-2", __vue_options__)
 	  }
 	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] NinoMarrazzo.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+	if (__vue_options__.functional) {console.error("[vue-loader] nmContents.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 	module.exports = __vue_exports__
 
 
 /***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/* 10 */
+/***/ function(module, exports) {
 
 	//
 	//
@@ -9464,32 +9581,173 @@
 	//
 	//
 	//
-
-	var compHeader = __webpack_require__(3);
-
-	module.exports = {
-		components: {
-			nmHeader: compHeader
-		},
-
-		data: function () {
-			return {};
-		}
-	};
 
 /***/ },
-/* 8 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
-	  return _h('div', {
-	    staticClass: "container"
-	  }, [_h('nmHeader')])
-	}},staticRenderFns: []}
+	  return _m(0)
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('section', {
+	    staticClass: "contents columns"
+	  }, [_h('div', {
+	    staticClass: "title"
+	  }, ["Lorem Ipsum", _h('div', {
+	    staticClass: "subtitle"
+	  }, ["Dolor silent ancest reliquum"]), _h('div', ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quo sint nulla, dolore maiores voluptatum magni. Mollitia accusantium quo, veniam nisi vitae culpa perferendis deserunt, similique doloribus natus commodi! Quos?"])])])
+	}}]}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2", module.exports)
+	  }
+	}
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(13)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(14)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-5", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-5", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] nmMainMenu.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _m(0)
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', {
+	    staticClass: "main-menu columns"
+	  }, [_h('ul', {
+	    staticClass: "main-menu__list"
+	  }, [_h('li', {
+	    staticClass: "main-menu__list__item"
+	  }, [_h('a', {
+	    staticClass: "main-menu__list__item__link",
+	    attrs: {
+	      "href": "#"
+	    }
+	  }, ["Dashboard"])]), _h('li', {
+	    staticClass: "main-menu__list__item"
+	  }, [_h('a', {
+	    staticClass: "main-menu__list__item__link",
+	    attrs: {
+	      "href": "#"
+	    }
+	  }, ["Customer"])])])])
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5", module.exports)
+	  }
+	}
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+
+	/* template */
+	var __vue_template__ = __webpack_require__(16)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-4", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-4", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] nmArticles.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){with(this) {
+	  return _m(0)
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', {
+	    staticClass: "articles"
+	  }, [_h('p', ["Articles!"])])
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4", module.exports)
 	  }
 	}
 

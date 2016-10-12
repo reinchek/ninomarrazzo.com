@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html >
   <head>
     <meta charset="utf-8">
     <title>Nino Marrazzo's blog</title>
@@ -10,8 +10,10 @@
 
   </head>
   <body>
-    <div id="nm">
-       <router-view></router-view>    
+    <div id="nm" class="container">
+      <router-view></router-view> <!-- default route components #nm(NinoMarrazzo.vue)-->
+      <router-view name="nmContents" class="center"></router-view> <!-- #nmContents(nmContents.vue) -->
+      <router-view name="nmFooter"></router-view> <!-- #nmFooter(nmFooter.vue) -->
     </div>
   
     <!-- include javascripts -->
