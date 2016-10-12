@@ -1,0 +1,15 @@
+.main-menu {
+	text-align: center;
+	font-size: 2em;
+
+	&__list {
+		&__item {
+			border-bottom: 1px solid white;
+			margin-bottom: 10px;
+			&__link {
+				color: white;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

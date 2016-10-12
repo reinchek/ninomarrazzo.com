@@ -1,0 +1,7 @@
+.center {
+	text-align: center;
+	&-block {
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
+}

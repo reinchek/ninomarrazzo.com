@@ -9393,9 +9393,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-1", __vue_options__)
+	    hotAPI.createRecord("data-v-2", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-1", __vue_options__)
+	    hotAPI.reload("data-v-2", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] NinoMarrazzo.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -9458,9 +9458,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-3", __vue_options__)
+	    hotAPI.createRecord("data-v-1", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-3", __vue_options__)
+	    hotAPI.reload("data-v-1", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] nmHeader.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -9479,8 +9479,6 @@
 	//
 	//
 	//
-	//
-	//
 
 /***/ },
 /* 7 */
@@ -9489,24 +9487,20 @@
 	module.exports={render:function (){with(this) {
 	  return _m(0)
 	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', {
-	    staticClass: "header"
-	  }, [_h('section', {
-	    staticClass: "hero header__section"
+	  return _h('header', {
+	    staticClass: "header columns"
 	  }, [_h('div', {
-	    staticClass: "hero-body header__section__body"
-	  }, [_h('div', {
-	    staticClass: "container center header__section__body__container"
+	    staticClass: "column center"
 	  }, [_h('h1', {
-	    staticClass: "title header__section__body__container__title"
-	  }, ["Nino Marrazzo blog"]), _h('h2', {
-	    staticClass: "subtitle header__section__body__container__subtitle"
-	  }, ["Sviluppo web, app mobile... Collaudo amache!"])])])])])
+	    staticClass: "title header__title"
+	  }, ["Nino", _h('br'), "Marrazzo"]), _h('h2', {
+	    staticClass: "subtitle header__subtitle"
+	  }, ["Sviluppo web, app mobile... Collaudo amache!"])])])
 	}}]}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1", module.exports)
 	  }
 	}
 
@@ -9524,7 +9518,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2", module.exports)
 	  }
 	}
 
@@ -9560,9 +9554,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2", __vue_options__)
+	    hotAPI.createRecord("data-v-3", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-2", __vue_options__)
+	    hotAPI.reload("data-v-3", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] nmContents.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -9600,7 +9594,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3", module.exports)
 	  }
 	}
 
@@ -9636,9 +9630,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5", __vue_options__)
+	    hotAPI.createRecord("data-v-4", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-5", __vue_options__)
+	    hotAPI.reload("data-v-4", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] nmMainMenu.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -9667,10 +9661,10 @@
 	module.exports={render:function (){with(this) {
 	  return _m(0)
 	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', {
+	  return _h('nav', {
 	    staticClass: "main-menu columns"
 	  }, [_h('ul', {
-	    staticClass: "main-menu__list"
+	    staticClass: "main-menu__list center-block"
 	  }, [_h('li', {
 	    staticClass: "main-menu__list__item"
 	  }, [_h('a', {
@@ -9678,19 +9672,19 @@
 	    attrs: {
 	      "href": "#"
 	    }
-	  }, ["Dashboard"])]), _h('li', {
+	  }, ["Blog"])]), _h('li', {
 	    staticClass: "main-menu__list__item"
 	  }, [_h('a', {
 	    staticClass: "main-menu__list__item__link",
 	    attrs: {
 	      "href": "#"
 	    }
-	  }, ["Customer"])])])])
+	  }, ["I d"])])])])
 	}}]}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4", module.exports)
 	  }
 	}
 
@@ -9723,9 +9717,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-4", __vue_options__)
+	    hotAPI.createRecord("data-v-5", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-4", __vue_options__)
+	    hotAPI.reload("data-v-5", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] nmArticles.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -9747,7 +9741,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5", module.exports)
 	  }
 	}
 
