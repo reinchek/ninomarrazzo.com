@@ -1,6 +1,11 @@
-# first
-npm install
+www.ninomarrazzo.com development
+================================
 
-# second
-npm run build
+vue.js + drupal 8 (decoupled)
+-----------------------------
+
+# How setup the project
+First install all dependencies:
+> **npm install**
+> **npm run build**
 
