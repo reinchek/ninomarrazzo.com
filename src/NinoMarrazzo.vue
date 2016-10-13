@@ -1,7 +1,8 @@
 <template lang="jade">
 	.container
 		nmHeader
-		router-view.center-block <!-- nmMainManu.vue -->
+		transition(name="slide-fade")
+			router-view.has-text-centered <!-- nmMainManu.vue -->
 </template>
 
 <script>

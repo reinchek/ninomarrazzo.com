@@ -1,14 +1,16 @@
 .main-menu {
 	text-align: center;
-	font-size: 2em;
+	font-size: 1em;
 
 	&__list {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
 		&__item {
-			border-bottom: 1px solid white;
 			margin-bottom: 10px;
 			&__link {
-				color: white;
-				text-transform: uppercase;
+				color: map_get($colors, 'whiteblue');
+				text-decoration: none;
 			}
 		}
 	}

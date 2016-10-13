@@ -1,10 +1,12 @@
 <template lang="jade">
-	nav.main-menu.columns
-		ul.main-menu__list.center-block
+	nav.main-menu
+		ul.main-menu__list
 			li.main-menu__list__item
-				a.main-menu__list__item__link(href="#") Blog
+				router-link(to="blog").main-menu__list__item__link(href="#") Blog
 			li.main-menu__list__item
-				a.main-menu__list__item__link(href="#") I d
+				router-link(to="").main-menu__list__item__link(href="#") GitHub
+			li.main-menu__list__item
+				router-link(to="").main-menu__list__item__link(href="#") Twitter
 </template>
 
 <script>

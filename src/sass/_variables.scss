@@ -1,8 +1,13 @@
-@import 'https://fonts.googleapis.com/css?family=Baloo+Bhai';
-
-$color: (
-  primary_blue: '#000',
+$colors: (
+  primary: #67b8dd,
   violet: violet,
   lightblue: lightblue,
+  whiteblue: #bbf2fd,
   red: red,
+  dark-grey: #333,
 );
+
+@each $c_name, $c_value in $colors {
+	.#{$c_name} { color: $c_value; }
+	.bg-#{$c_name} { background-color: $c_value; }
+}

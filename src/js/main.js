@@ -1,24 +1,30 @@
 var Vue = require('vue/dist/vue.js');
 var VueRouter = require('vue-router');
+var VueResource = require('vue-resource');
 
 var components = {
 	nm: require('vue!../../src/NinoMarrazzo.vue'),
+	
 	nmHedaer: require('vue!../../src/components/parts/nmHeader.vue'),
+	
 	nmContents: require('vue!../components/parts/nmContents.vue'),
+	
 	nmMainMenu: require('vue!../components/parts/nmMainMenu.vue'),
-	nmArticles: require('vue!../components/nmArticles.vue'),
+
+	nmArticles: require('vue!../components/articles/nmArticles.vue'),
 };
 
 Vue.use(VueRouter);
+Vue.use(VueResource);
+
 
 var router = new VueRouter({
-	mode: 'history',
+	history: true,
 	routes: [
 		{
 			path: '/',
 			components: {
  				default: components.nm,
- 				nmContents: components.nmContents,
 			},
 			children: [
 				{
@@ -40,10 +46,18 @@ var router = new VueRouter({
 				},
 			],
 		},
+		{
+			path: '/test',
+			name: 'nmtest',
+			transition: 'slide-fade',
+			components: {
+				default: components.nmContents,
+			},
+		},
 	],
 });
 
-new Vue({
+var Vue = new Vue({
   el: '#nm',
   data: {
   }, 
@@ -63,4 +77,12 @@ new Vue({
   },
 
   router: router,
+
+  http: {
+    root: '/',
+    headers: {
+    }
+  }
 });
+
+console.log(Vue);

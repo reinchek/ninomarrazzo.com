@@ -1,8 +1,9 @@
 <template lang="jade">
-	header.header.columns
-		div.column.center
-			h1.title.header__title Nino<br>Marrazzo
-			h2.subtitle.header__subtitle Sviluppo web, app mobile... Collaudo amache!
+	transition(name="slide-fade")
+		header.header
+			div.center
+				h1.title.header__title <b>Nino<br>Marrazzo</b>
+				h2.subtitle.header__subtitle Collaudatore di amache - Drupal Developer - Web App
 </template>
 
 <script>
