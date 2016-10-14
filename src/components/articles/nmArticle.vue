@@ -1,7 +1,7 @@
 <template lang="jade">
 	article
 		p Nguuuuuuul
-		.title {{article.title.value}}
+			.title {{article.title.value}}
 </template>
 
 <script>

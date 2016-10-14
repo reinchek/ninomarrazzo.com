@@ -131,7 +131,6 @@
 	  }
 	});
 
-	console.log(Vue);
 
 /***/ },
 /* 1 */
@@ -10938,9 +10937,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5", __vue_options__)
+	    hotAPI.createRecord("data-v-1", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-5", __vue_options__)
+	    hotAPI.reload("data-v-1", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] NinoMarrazzo.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11004,9 +11003,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-1", __vue_options__)
+	    hotAPI.createRecord("data-v-2", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-1", __vue_options__)
+	    hotAPI.reload("data-v-2", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] nmHeader.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11051,7 +11050,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2", module.exports)
 	  }
 	}
 
@@ -11073,7 +11072,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1", module.exports)
 	  }
 	}
 
@@ -11109,9 +11108,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-4", __vue_options__)
+	    hotAPI.createRecord("data-v-5", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-4", __vue_options__)
+	    hotAPI.reload("data-v-5", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] nmContents.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11149,7 +11148,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5", module.exports)
 	  }
 	}
 
@@ -11263,7 +11262,7 @@
 	__vue_exports__ = __webpack_require__(17)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(21)
+	var __vue_template__ = __webpack_require__(18)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -11285,9 +11284,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2", __vue_options__)
+	    hotAPI.createRecord("data-v-4", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-2", __vue_options__)
+	    hotAPI.reload("data-v-4", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] nmArticles.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11307,26 +11306,29 @@
 	//
 	//
 
-	var compArticle = __webpack_require__(18);
+	var compArticle = __webpack_require__(19);
 	var RESTServer = 'http://172.17.0.3';
 
 	module.exports = {
+		props: ['article'],
+
 		components: {
 			nmArticle: compArticle
 		},
 		data: function () {
+			this.$http.get(RESTServer + '/articles/all').then(function (response) {
+				// success callback
+				console.log('Moooostr!');
+				console.log(response);
+				console.log(this);
+				this._data.articles = response.body;
+				return true;
+			}, function (response) {
+				// error callback
+			});
 			return {
-				articles: function () {
-					this.$http.get(RESTServer + '/articles/all').then(function (response) {
-						// success callback
-						console.log('Moooostr!');
-						return true;
-					}, function (response) {
-						// error callback
-						console.log('loot!');
-						return false;
-					});
-				}
+				articles: null,
+				prova: 'ciao'
 			};
 		}
 	};
@@ -11335,13 +11337,41 @@
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "articles"
+	  }, [_m(0), _l((articles), function(article) {
+	    return _h('nmArticle', {
+	      attrs: {
+	        "article": "article"
+	      }
+	    })
+	  }), _h('router-link', {
+	    attrs: {
+	      "to": "test"
+	    }
+	  }, ["contents"])])
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', ["Articles!"])
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4", module.exports)
+	  }
+	}
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __vue_exports__, __vue_options__
 
 	/* script */
-	__vue_exports__ = __webpack_require__(19)
+	__vue_exports__ = __webpack_require__(20)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(20)
+	var __vue_template__ = __webpack_require__(21)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -11374,7 +11404,7 @@
 
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	//
@@ -11385,48 +11415,22 @@
 	//
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
 	  return _h('article', [_m(0), _h('div', {
 	    staticClass: "title"
-	  }, [_s(article.title.value)])])
+	  }, [_s(article.title.value)]), _m(1)])
 	}},staticRenderFns: [function (){with(this) {
 	  return _h('p', ["Nguuuuuuul"])
+	}},function (){with(this) {
+	  return _h('p')
 	}}]}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6", module.exports)
-	  }
-	}
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){with(this) {
-	  return _h('div', {
-	    staticClass: "articles"
-	  }, [_m(0), _l((articles), function(article) {
-	    return _h('nmArticle', {
-	      attrs: {
-	        "article": article
-	      }
-	    })
-	  }), _h('router-link', {
-	    attrs: {
-	      "to": "test"
-	    }
-	  }, ["contents"])])
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', ["Articles!"])
-	}}]}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2", module.exports)
 	  }
 	}
 

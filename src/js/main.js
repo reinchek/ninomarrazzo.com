@@ -84,5 +84,3 @@ var Vue = new Vue({
     }
   }
 });
-
-console.log(Vue);
